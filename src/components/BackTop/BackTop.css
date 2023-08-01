@@ -1,0 +1,9 @@
+.show {
+  opacity: 100;
+}
+.hidden {
+  opacity: 0;
+}
+.back-to-top {
+  display: block !important;
+}
