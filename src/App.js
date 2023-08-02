@@ -19,6 +19,8 @@ import axios from 'axios';
 import { BASE_URL } from './constant/constant';
 import { StateContext } from './context/context';
 import Main from './pages/Main/Main';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 function App() {
   const [news, setNews] = useState()
@@ -65,6 +67,8 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/blogDetail/:id' element={<BlogDetail />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
         {/* <Footer /> */}
         <BackTop />
