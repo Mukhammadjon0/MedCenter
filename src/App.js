@@ -21,6 +21,7 @@ import { StateContext } from './context/context';
 import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import ServiceDetail from './pages/Services/ServiceDetail';
 
 function App() {
   const [news, setNews] = useState()
@@ -69,6 +70,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='serviceDetail/:id' element={<ServiceDetail />} />
         </Routes>
         {/* <Footer /> */}
         <BackTop />
