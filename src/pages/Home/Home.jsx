@@ -6,16 +6,22 @@ import Services from '../../components/Services/Services'
 import Staff from '../../components/Staff/Staff'
 import Comments from '../../components/Comments/Comments'
 import Blog from '../../components/Blog/Blog'
+import Navbar from '../../components/Navbar/Navbar'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 function Home() {
     return (
         <>
+            <Header />
+            <Navbar />
             <Hero />
             <About />
             <Services />
             <Staff />
             <Comments />
             <Blog />
+            <Footer />
         </>
     )
 }

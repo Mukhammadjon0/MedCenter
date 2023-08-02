@@ -17,6 +17,12 @@ import About4 from './assets/img/about4.jpg'
 import About5 from './assets/img/about5.jpg'
 import About6 from './assets/img/about6.jpg'
 
+import MedPlus from './assets/img/med+.jpg'
+import ShifoMed from './assets/img/shifoMed.jpg'
+import Darmon from './assets/img/darmonMed.jpg'
+import MedCenter from './assets/img/medCenter.jpg'
+
+
 import { FaHandHoldingMedical, FaMicroscope, FaProcedures, FaRegHospital, FaStethoscope, FaUserMd, FaClinicMedical, FaFileMedical, FaFileMedicalAlt, FaPills } from 'react-icons/fa'
 
 export const staff = [
@@ -159,5 +165,34 @@ export const services = [
         text_uz: "Jarrohlik operatsiyasi paytida to'qimalarni ajratish va bog'lash orqali kasalliklarni davolash usuli.",
         text_en: 'A method of treating diseases by separating and connecting tissues during a surgical operation.',
         id: 11
+    },
+]
+
+
+
+export const medCenters = [
+    {
+        name: 'MEDPlus',
+        img: MedPlus,
+        title: "MED+ klinikasida biz eng ilg‘or texnologiyalarni chinakam g‘amxo‘rlik iliqligi bilan uyg‘unlashtirib, an’anaviy sog‘liqni saqlash chegaralaridan oshib ketamiz. Bizning muassasamiz eng yangi tibbiy asbob-uskunalar va keng qamrovli mutaxassisliklar bo'yicha tengsiz tibbiy xizmatlarni taqdim etish uchun ilg'or yondashuvga ega.Taniqli tibbiyot mutaxassislari jamoasi boshchiligidagi bizning vazifamiz odamlarga o'z sog'lig'ini nazorat qilish imkoniyatini berish va ularning noyob ehtiyojlarini qondiradigan moslashtirilgan echimlarni taklif qilishdir. Profilaktik yordamdan tortib murakkab tibbiy aralashuvlargacha, biz sizning sog'lomlikka bo'lgan sayohatingiz qulay va samarali bo'lishini ta'minlash uchun yuqoridan va undan ham ko'proq narsani qilamiz.",
+        id: 1
+    },
+    {
+        name: 'ShifoMed',
+        img: ShifoMed,
+        title: "MED+ klinikasida biz eng ilg‘or texnologiyalarni chinakam g‘amxo‘rlik iliqligi bilan uyg‘unlashtirib, an’anaviy sog‘liqni saqlash chegaralaridan oshib ketamiz. Bizning muassasamiz eng yangi tibbiy asbob-uskunalar va keng qamrovli mutaxassisliklar bo'yicha tengsiz tibbiy xizmatlarni taqdim etish uchun ilg'or yondashuvga ega.Taniqli tibbiyot mutaxassislari jamoasi boshchiligidagi bizning vazifamiz odamlarga o'z sog'lig'ini nazorat qilish imkoniyatini berish va ularning noyob ehtiyojlarini qondiradigan moslashtirilgan echimlarni taklif qilishdir. Profilaktik yordamdan tortib murakkab tibbiy aralashuvlargacha, biz sizning sog'lomlikka bo'lgan sayohatingiz qulay va samarali bo'lishini ta'minlash uchun yuqoridan va undan ham ko'proq narsani qilamiz.",
+        id: 2
+    },
+    {
+        name: 'Darmon$Service',
+        img: Darmon,
+        title: "MED+ klinikasida biz eng ilg‘or texnologiyalarni chinakam g‘amxo‘rlik iliqligi bilan uyg‘unlashtirib, an’anaviy sog‘liqni saqlash chegaralaridan oshib ketamiz. Bizning muassasamiz eng yangi tibbiy asbob-uskunalar va keng qamrovli mutaxassisliklar bo'yicha tengsiz tibbiy xizmatlarni taqdim etish uchun ilg'or yondashuvga ega.Taniqli tibbiyot mutaxassislari jamoasi boshchiligidagi bizning vazifamiz odamlarga o'z sog'lig'ini nazorat qilish imkoniyatini berish va ularning noyob ehtiyojlarini qondiradigan moslashtirilgan echimlarni taklif qilishdir. Profilaktik yordamdan tortib murakkab tibbiy aralashuvlargacha, biz sizning sog'lomlikka bo'lgan sayohatingiz qulay va samarali bo'lishini ta'minlash uchun yuqoridan va undan ham ko'proq narsani qilamiz.",
+        id: 3
+    },
+    {
+        name: 'MEDCenter',
+        img: MedCenter,
+        title: "MED+ klinikasida biz eng ilg‘or texnologiyalarni chinakam g‘amxo‘rlik iliqligi bilan uyg‘unlashtirib, an’anaviy sog‘liqni saqlash chegaralaridan oshib ketamiz. Bizning muassasamiz eng yangi tibbiy asbob-uskunalar va keng qamrovli mutaxassisliklar bo'yicha tengsiz tibbiy xizmatlarni taqdim etish uchun ilg'or yondashuvga ega.Taniqli tibbiyot mutaxassislari jamoasi boshchiligidagi bizning vazifamiz odamlarga o'z sog'lig'ini nazorat qilish imkoniyatini berish va ularning noyob ehtiyojlarini qondiradigan moslashtirilgan echimlarni taklif qilishdir. Profilaktik yordamdan tortib murakkab tibbiy aralashuvlargacha, biz sizning sog'lomlikka bo'lgan sayohatingiz qulay va samarali bo'lishini ta'minlash uchun yuqoridan va undan ham ko'proq narsani qilamiz.",
+        id: 4
     },
 ]

@@ -18,6 +18,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BASE_URL } from './constant/constant';
 import { StateContext } from './context/context';
+import Main from './pages/Main/Main';
 
 function App() {
   const [news, setNews] = useState()
@@ -54,17 +55,18 @@ function App() {
   return (
     <div className="App">
       <StateContext.Provider value={{ news, contact, setLang, lang }}>
-        <Header />
-        <Navbar />
+        {/* <Header />
+        <Navbar /> */}
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Main />} />
+          <Route path='/med' element={<Home />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/services' element={<ServicesPage />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/blogDetail/:id' element={<BlogDetail />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
         <BackTop />
       </StateContext.Provider>
     </div>

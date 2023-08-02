@@ -9,8 +9,18 @@ import { BsTelephone } from 'react-icons/bs'
 import { VscMail } from 'react-icons/vsc'
 import { FaFacebook, FaInstagram, FaOdnoklassniki, FaTelegram, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { StateContext } from '../../context/context'
+import CustomDropdown from './CustomDropdown'
 function Header() {
-  const { contact, lang, setLang } = useContext(StateContext)
+  const { contact, setLang, lang } = useContext(StateContext)
+
+  const options = [
+    { value: 'uz', label: 'Option 2', imageSrc: UzFlag },
+    { value: "ru", label: 'Option 1', imageSrc: RuFlag },
+    { value: 'us', label: 'Option 2', imageSrc: UsFlag },
+  ];
+  const handleLangChange = (event) => {
+    setLang(event.target.value);
+  };
   return (
     <div className="container-fluid py-2 border-bottom d-none d-lg-block">
       <div className="container">
@@ -26,30 +36,11 @@ function Header() {
           </div>
           <div className="col-md-6 text-center text-lg-end">
             <div className="d-inline-flex align-items-center">
-              <img
-                onClick={() => setLang('uz')}
-                className="text-body mx-2 border-1 border-secondary border cursor-pointer"
-                width="20px"
-                height="16px"
-                src={UzFlag}
-                alt="icon"
-              />
-              <img
-                onClick={() => setLang('ru')}
-                className="text-body mx-2 border-1 border-secondary border cursor-pointer"
-                width="20px"
-                height="16px"
-                src={RuFlag}
-                alt="icon"
-              />
-              <img
-                onClick={() => setLang('en')}
-                className="text-body mx-2 border-1 border-secondary border cursor-pointer"
-                width="20px"
-                height="16px"
-                src={UsFlag}
-                alt="icon"
-              />
+              <select className='bg-transparent border border-0' name="" id="" value={lang} onChange={handleLangChange}>
+                <option value="uz">uz</option>
+                <option value="ru">ru</option>
+                <option value="en">en</option>
+              </select>
               <a className="text-body ps-2 cursor-pointer" href={contact?.telegram}>
                 <FaTelegram />
               </a>
