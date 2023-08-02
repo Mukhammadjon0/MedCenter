@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react'
 import './Navbar.css'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { FaClinicMedical } from 'react-icons/fa'
 import { StateContext } from '../../context/context'
 function Navbar() {
     const [navToggle, setNavToggle] = useState(false)
     const { lang } = useContext(StateContext)
+    const navigate=useNavigate()
     return (
         <div className="container-fluid sticky-top bg-white shadow-sm">
             <div className="container">
@@ -41,6 +42,11 @@ function Navbar() {
                             <NavLink to="/contact" className="nav-item nav-link">
                                 {lang === 'uz' ? "Aloqa" : lang === 'ru' ? "Контакт" : 'Contact'}
                             </NavLink>
+                            {/* <div className="col-12 text-center mt-5"> */}
+                            <button onClick={()=>navigate('/login')} className="btn btn-primary py-3 px-5" type="submit">
+                            Login
+                            </button>
+                            {/* </div> */}
                         </div>
                     </div>
                 </nav>
