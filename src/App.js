@@ -33,9 +33,9 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/v1/new/?lan=${lang}`);
-      const data = response?.data;
-      setNews(data?.data);
+      // const response = await axios.get(`${BASE_URL}/api/v1/new/?lan=${lang}`);
+      // const data = response?.data;
+      // setNews(data?.data)
       // Handle the data as needed
     } catch (error) {
       console.error("Error:", error);
@@ -44,9 +44,9 @@ function App() {
   };
   const getContact = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/v1/contact`);
-      const data = response?.data;
-      setContact(data?.data);
+      // const response = await axios.get(`${BASE_URL}/api/v1/contact`)
+      // const data = response?.data
+      // setContact(data?.data)
     } catch (error) {
       console.log("Error:", error);
     }
