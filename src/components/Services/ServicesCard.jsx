@@ -1,10 +1,13 @@
 import React, { useContext } from 'react'
 import { StateContext } from '../../context/context'
+import { useNavigate } from 'react-router-dom'
 
-function ServicesCard({ icon, title_ru, title_uz, title_en, text_ru, text_uz, text_en, }) {
+
+function ServicesCard({ icon, title_ru, title_uz, title_en, text_ru, text_uz, text_en, id}) {
     const { lang } = useContext(StateContext)
+    const navigate = useNavigate()
     return (
-        <div className="col-lg-4 col-md-6">
+        <div className="col-lg-4 col-md-6" onClick={()=> navigate(`/serviceDetail/${id}`)}>
             <div
                 className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center"
             >

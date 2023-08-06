@@ -1,26 +1,27 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import "./assets/css/bootstrap.min.css";
-import "./assets/css/style.css";
-import "./assets/library/tempusdominus-bootstrap-4.css";
-import "./assets/library/tempusdominus-bootstrap-4.min.css";
-import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home/Home";
-import Blog from "./pages/Blog/Blog";
-import Contact from "./pages/Contact/Contact";
-import Footer from "./components/Footer/Footer";
-import AboutPage from "./pages/About/About";
-import BackTop from "./components/BackTop/BackTop";
-import ServicesPage from "./pages/Services/Services";
-import BlogDetail from "./pages/Blog/BlogDetail";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { BASE_URL } from "./constant/constant";
-import { StateContext } from "./context/context";
-import Main from "./pages/Main/Main";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import './assets/css/bootstrap.min.css'
+import './assets/css/style.css'
+import './assets/library/tempusdominus-bootstrap-4.css'
+import './assets/library/tempusdominus-bootstrap-4.min.css'
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home/Home';
+import Blog from './pages/Blog/Blog';
+import Contact from './pages/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import AboutPage from './pages/About/About';
+import BackTop from './components/BackTop/BackTop';
+import ServicesPage from './pages/Services/Services';
+import BlogDetail from './pages/Blog/BlogDetail';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BASE_URL } from './constant/constant';
+import { StateContext } from './context/context';
+import Main from './pages/Main/Main';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import ServiceDetail from './pages/Services/ServiceDetail';
 import DocInfo from "./components/DocInfo/DocInfo";
 
 function App() {
@@ -72,7 +73,8 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-        </Routes> */}
+          <Route path='serviceDetail/:id' element={<ServiceDetail />} />
+        </Routes>
         {/* <Footer /> */}
         {/* <BackTop /> */}
         <DocInfo />

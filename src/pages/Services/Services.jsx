@@ -4,8 +4,11 @@ import Comments from '../../components/Comments/Comments'
 import { services } from '../../data'
 import { StateContext } from '../../context/context'
 import ServicesCard from '../../components/Services/ServicesCard'
+import { useNavigate } from 'react-router-dom'
+
 function ServicesPage() {
     const { lang } = useContext(StateContext)
+    const navigate= useNavigate()
     return (
         <>
             {/* <Services /> */}
