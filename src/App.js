@@ -22,45 +22,48 @@ import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import ServiceDetail from './pages/Services/ServiceDetail';
+import DocInfo from "./components/DocInfo/DocInfo";
 
 function App() {
-  const [news, setNews] = useState()
-  const [contact, setContact] = useState()
-  const [lang, setLang] = useState(JSON.parse(localStorage.getItem("lang")) || 'uz')
+  const [news, setNews] = useState();
+  const [contact, setContact] = useState();
+  const [lang, setLang] = useState(
+    JSON.parse(localStorage.getItem("lang")) || "uz"
+  );
 
   const fetchData = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/api/v1/new/?lan=${lang}`);
       const data = response?.data;
-      setNews(data?.data)
+      setNews(data?.data);
       // Handle the data as needed
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       // Handle the error
     }
   };
   const getContact = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/v1/contact`)
-      const data = response?.data
-      setContact(data?.data)
+      const response = await axios.get(`${BASE_URL}/api/v1/contact`);
+      const data = response?.data;
+      setContact(data?.data);
     } catch (error) {
-      console.log('Error:', error)
+      console.log("Error:", error);
     }
-  }
+  };
   useEffect(() => {
-    localStorage.setItem("lang", JSON.stringify(lang))
+    localStorage.setItem("lang", JSON.stringify(lang));
     fetchData();
-    getContact()
-  }, [lang])
+    getContact();
+  }, [lang]);
 
-  console.log(contact)
+  console.log(contact);
   return (
     <div className="App">
       <StateContext.Provider value={{ news, contact, setLang, lang }}>
         {/* <Header />
         <Navbar /> */}
-        <Routes>
+        {/* <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/med' element={<Home />} />
           <Route path='/about' element={<AboutPage />} />
@@ -73,7 +76,8 @@ function App() {
           <Route path='serviceDetail/:id' element={<ServiceDetail />} />
         </Routes>
         {/* <Footer /> */}
-        <BackTop />
+        {/* <BackTop /> */}
+        <DocInfo />
       </StateContext.Provider>
     </div>
   );
