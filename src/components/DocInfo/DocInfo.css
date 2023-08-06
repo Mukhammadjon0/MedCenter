@@ -1,0 +1,30 @@
+.DocInfo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.DocInfo .room {
+  align-items: center;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #2bcbe0;
+}
+.DocInfo .room span {
+  display: block;
+  color: #1d2a4d;
+  font-size: 20px;
+  font-weight: 700;
+}
+.DocInfo .infoDoc {
+  max-width: 255px;
+}
+.DocInfo button:hover {
+  color: #1d2a4d;
+}
+.darkBlue {
+  font-weight: 700;
+  font-size: 16px;
+  color: #1d2a4d;
+}

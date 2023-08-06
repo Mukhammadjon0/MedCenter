@@ -10,3 +10,9 @@
   align-items: center;
   justify-content: center;
 }
+.doctor-works .work-day .work-time {
+  color: #1d2a4d;
+}
+.doctor-works .work-day {
+  color: #2bcbe0;
+}
