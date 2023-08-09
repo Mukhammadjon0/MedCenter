@@ -13,15 +13,12 @@ import Footer from '../../components/Footer/Footer'
 function Home() {
     return (
         <>
-            <Header />
-            <Navbar />
             <Hero />
             <About />
             <Services />
             <Staff />
             <Comments />
-            <Blog />
-            <Footer />
+            {/* <Blog /> */}
         </>
     )
 }

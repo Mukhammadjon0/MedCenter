@@ -5,13 +5,15 @@ import { services } from '../../data'
 import { StateContext } from '../../context/context'
 import ServicesCard from '../../components/Services/ServicesCard'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header/Header'
 
 function ServicesPage() {
     const { lang } = useContext(StateContext)
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     return (
         <>
-            {/* <Services /> */}
             <div className="container-fluid py-5">
                 <div className="container">
                     <div className="text-center mx-auto mb-5" style={{ maxWidth: "500px" }}>
@@ -29,7 +31,6 @@ function ServicesPage() {
                     </div>
                 </div>
             </div >
-            <Comments />
         </>
     )
 }

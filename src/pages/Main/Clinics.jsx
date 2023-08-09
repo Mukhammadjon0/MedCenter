@@ -6,6 +6,8 @@ import { medCenters } from '../../data'
 import ClinicCard from './ClinicCard'
 import axios from 'axios'
 function Clinics() {
+
+    const [clinik, setClinik] = useState()
     const getClicks = () => {
         const body = {
             method: 'get_clink',
@@ -13,9 +15,9 @@ function Clinics() {
 
             }
         }
-        axios.post("http://127.0.0.1:8123/main/", body)
+        axios.post("https://najottalim-26e0a6445d60.herokuapp.com/main/", body)
             .then(res => {
-                console.log(res)
+                setClinik(res)
             })
             .catch(err => {
                 console.log(err)
@@ -25,10 +27,11 @@ function Clinics() {
         getClicks()
     }, [])
 
+    console.log(clinik?.data.clink)
+
     return (
         <div>
-            {medCenters.map((item, index) => <ClinicCard key={index} {...item} />)}
-
+            {clinik?.data.clink.map((item, index) => <ClinicCard key={index} item={item} />)}
         </div>
     )
 }

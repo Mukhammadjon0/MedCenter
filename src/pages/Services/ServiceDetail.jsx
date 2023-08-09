@@ -7,8 +7,6 @@ import Footer from "../../components/Footer/Footer";
 function ServiceDetail() {
   return (
     <>
-      <Header />
-      <Navbar />
       <div className="container-fluid py-5 container">
         {staff?.map((item) => (
           <div className="team-item">
@@ -39,7 +37,6 @@ function ServiceDetail() {
           </div>
         ))}
       </div>
-      <Footer />
     </>
   );
 }

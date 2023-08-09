@@ -61,9 +61,9 @@ function App() {
   return (
     <div className="App">
       <StateContext.Provider value={{ news, contact, setLang, lang }}>
-        {/* <Header />
-        <Navbar /> */}
-        {/* <Routes>
+        <Header />
+        <Navbar />
+        <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/med' element={<Home />} />
           <Route path='/about' element={<AboutPage />} />
@@ -75,9 +75,9 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='serviceDetail/:id' element={<ServiceDetail />} />
         </Routes>
-        {/* <Footer /> */}
-        {/* <BackTop /> */}
         <DocInfo />
+        <Footer />
+        <BackTop />
       </StateContext.Provider>
     </div>
   );

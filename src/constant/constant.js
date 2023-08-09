@@ -1,1 +1,1 @@
-export const BASE_URL='https://qodirovlorcentr.herokuapp.com'
+export const BASE_URL = 'https://najottalim-26e0a6445d60.herokuapp.com'

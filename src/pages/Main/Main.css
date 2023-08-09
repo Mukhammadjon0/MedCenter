@@ -27,3 +27,6 @@ main .swiper-slide img {
 .image-right {
   order: 1; /* Keep the default flex order for left positioning */
 }
+.main__title {
+  color: #1d2a4d !important;
+}
