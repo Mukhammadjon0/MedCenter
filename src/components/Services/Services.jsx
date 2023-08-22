@@ -5,10 +5,15 @@ import { services } from '../../data'
 import ServicesCard from './ServicesCard'
 import { useNavigate } from 'react-router-dom'
 import { StateContext } from '../../context/context'
+import { useServiceQuery } from '../../services/servisesApi'
 function Services() {
     const { lang } = useContext(StateContext)
     const navigate = useNavigate()
-    const lastThreeItems = services?.slice(-3);
+
+    const { data: service } = useServiceQuery()
+    console.log(service?.result)
+
+    const lastThreeItems = service?.result?.slice(-3);
     const renderedItems = lastThreeItems?.map(item => (
         <ServicesCard key={item.id} {...item} />
     ));

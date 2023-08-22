@@ -23,6 +23,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import ServiceDetail from './pages/Services/ServiceDetail';
 import DocInfo from "./components/DocInfo/DocInfo";
+import { useServiceQuery } from './services/servisesApi';
 
 function App() {
   const [news, setNews] = useState();
@@ -58,14 +59,15 @@ function App() {
   }, [lang]);
 
   console.log(contact);
+
+
   return (
     <div className="App">
       <StateContext.Provider value={{ news, contact, setLang, lang }}>
         <Header />
         <Navbar />
         <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/med' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/services' element={<ServicesPage />} />
           <Route path='/blog' element={<Blog />} />
@@ -73,9 +75,9 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='serviceDetail/:id' element={<ServiceDetail />} />
+          <Route path='/serviceDetail/:id' element={<ServiceDetail />} />
+          <Route path='/doctorInfo/:id' element={<DocInfo />} />
         </Routes>
-        <DocInfo />
         <Footer />
         <BackTop />
       </StateContext.Provider>
