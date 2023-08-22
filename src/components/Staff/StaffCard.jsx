@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,10 +11,18 @@ import { Pagination } from "swiper";
 import "./Staff.css";
 import { FaFacebookF, FaInstagram, FaPhone, FaTelegram } from "react-icons/fa";
 import { staff } from "../../data";
+import { useNavigate } from "react-router";
+import { useDoctorsQuery } from "../../services/doctorsApi";
+import { BASE_URL } from "../../constant/constant";
+import { StateContext } from "../../context/context";
 
-function StaffCard({ img, name, space, text }) {
+function StaffCard() {
+  const navigate = useNavigate()
+  const { lang } = useContext(StateContext)
+  const { data: doctors } = useDoctorsQuery()
+  console.log(doctors?.message)
+
   const swiperRef = useRef(null);
-
   useEffect(() => {
     const swiperInstance = swiperRef.current.swiper;
 
@@ -62,35 +70,31 @@ function StaffCard({ img, name, space, text }) {
       modules={[Pagination]}
       className="mySwiper"
     >
-      {staff?.map((item) => (
+      {doctors?.message?.map((item) => (
         <SwiperSlide key={item.id}>
-          <div className="team-item">
+          <div className="team-item" onClick={() => navigate(`/doctorInfo/${item.id}`)}>
             <div className="row g-0 bg-light rounded overflow-hidden">
               <div className="col-12 col-sm-5 h-100">
                 <img
                   className="img-fluid h-100"
-                  src={item.img}
+                  src={`${BASE_URL}${item.img}`}
                   style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="col-12 col-sm-7 h-100 d-flex flex-column">
                 <div className="mt-auto p-4">
-                  <h3>{item.name}</h3>
+                  <h3>{item.name} {item.familya}</h3>
                   <h6 className="fw-normal fst-italic text-primary mb-4">
                     {item.space}
                   </h6>
-                  <p className="m-0">{item.text}</p>
+                  <p className="m-0">{lang === 'uz' ? item.info_uz : lang === 'ru' ? item.info_ru : item.info_en}</p>
                 </div>
-                <div className="doctor-works ps-4 pe-4">
-                  <span className="work-day d-flex justify-content-between">
-                    Dushanba <span className="work-time">10:00 17:00</span>
-                  </span>
-                  <span className="work-day d-flex mt-1 justify-content-between">
-                    Chorshanba <span className="work-time">10:00 17:00</span>
-                  </span>
-                  <span className="work-day d-flex mt-1 justify-content-between">
-                    Juma <span className="work-time">10:00 17:00</span>
-                  </span>
+                <div className="d-flex mt-auto border-top p-4 personal-links">
+                  <span className="btn btn-lg btn-primary btn-lg-square rounded-circle me-3">D</span>
+                  <span className="btn btn-lg btn-danger btn-lg-square rounded-circle me-3">S</span>
+                  <span className="btn btn-lg btn-primary btn-lg-square rounded-circle me-3">Ch</span>
+                  <span className="btn btn-lg btn-primary btn-lg-square rounded-circle me-3">P</span>
+                  <span className="btn btn-lg btn-danger btn-lg-square rounded-circle me-3">J</span>
                 </div>
               </div>
             </div>

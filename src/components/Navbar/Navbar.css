@@ -4,3 +4,8 @@
   align-items: center;
   gap: 0.5rem;
 }
+@media (min-width: 992px) {
+  .navbar-expand-lg {
+    justify-content: space-between !important;
+  }
+}

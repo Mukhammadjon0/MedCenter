@@ -6,7 +6,6 @@ import Navbar from "../../components/Navbar/Navbar";
 function Register() {
   return (
     <>
-      <Navbar />
       <div className="container register-page">
         <h1>Ro'yxatdan o'tish</h1>
         <form action="">

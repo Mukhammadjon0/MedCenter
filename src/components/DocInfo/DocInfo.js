@@ -1,14 +1,19 @@
 import { React, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { staff } from "../../data";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { StateContext } from "../../context/context";
-import rasm from "/home/miraziz/fintechHub/MedCenter/src/assets/img/darmonMed.jpg"
+// import rasm from "/home/miraziz/fintechHub/MedCenter/src/assets/img/darmonMed.jpg"
 
 import "./DocInfo.css";
+import { useDoctorsDetailQuery } from "../../services/doctorsApi";
 export default function DocInfo() {
-  const navigate = useNavigate();
+  const { id } = useParams()
+  const { data: docInfo } = useDoctorsDetailQuery(Number(id))
+  console.log(docInfo)
+
+
   const [show, setShow] = useState(false);
   const { lang } = useContext(StateContext);
   const handleClose = () => setShow(false);
@@ -25,8 +30,8 @@ export default function DocInfo() {
               {lang === "uz"
                 ? "Shifokor :"
                 : lang === "ru"
-                ? "Главный :"
-                : "Doctor :"}
+                  ? "Главный :"
+                  : "Doctor :"}
             </h4>
             <span className="darkBlue">Jumayev Jasur</span>
           </div>
@@ -35,8 +40,8 @@ export default function DocInfo() {
               {lang === "uz"
                 ? "Navbat :"
                 : lang === "ru"
-                ? "Главный :"
-                : "Queue :"}
+                  ? "Главный :"
+                  : "Queue :"}
             </h4>
             <span className="darkBlue">13</span>
           </div>
@@ -45,8 +50,8 @@ export default function DocInfo() {
               {lang === "uz"
                 ? "Xona :"
                 : lang === "ru"
-                ? "Главный :"
-                : "Room :"}
+                  ? "Главный :"
+                  : "Room :"}
             </h4>
             <span className="darkBlue">18</span>
           </div>
@@ -55,8 +60,8 @@ export default function DocInfo() {
               {lang === "uz"
                 ? "Qavat :"
                 : lang === "ru"
-                ? "Главный :"
-                : "Floor :"}
+                  ? "Главный :"
+                  : "Floor :"}
             </h4>
             <span className="darkBlue">2</span>
           </div>
@@ -65,8 +70,8 @@ export default function DocInfo() {
               {lang === "uz"
                 ? "Bemor :"
                 : lang === "ru"
-                ? "Главный :"
-                : "Pasient :"}
+                  ? "Главный :"
+                  : "Pasient :"}
             </h4>
             <span className="darkBlue">Davirov G'ayrat</span>
           </div>

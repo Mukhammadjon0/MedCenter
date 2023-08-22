@@ -1,17 +1,21 @@
 import React, { useContext } from 'react'
 import './Services.css'
 import Comments from '../../components/Comments/Comments'
-import { services } from '../../data'
 import { StateContext } from '../../context/context'
 import ServicesCard from '../../components/Services/ServicesCard'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header/Header'
+import { useServiceQuery } from '../../services/servisesApi'
 
 function ServicesPage() {
     const { lang } = useContext(StateContext)
-    const navigate= useNavigate()
+    const navigate = useNavigate()
+
+    const { data: services } = useServiceQuery()
     return (
         <>
-            {/* <Services /> */}
             <div className="container-fluid py-5">
                 <div className="container">
                     <div className="text-center mx-auto mb-5" style={{ maxWidth: "500px" }}>
@@ -25,11 +29,10 @@ function ServicesPage() {
                         </h1>
                     </div>
                     <div className="row g-5">
-                        {services?.map(item => <ServicesCard key={item.id} {...item} />)}
+                        {services?.result?.map(item => <ServicesCard key={item.id} {...item} />)}
                     </div>
                 </div>
             </div >
-            <Comments />
         </>
     )
 }

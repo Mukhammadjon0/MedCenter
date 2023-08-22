@@ -14,7 +14,7 @@ main.swiper-slide {
   align-items: center;
 }
 
-main.swiper-slide img {
+main .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -26,4 +26,7 @@ main.swiper-slide img {
 
 .image-right {
   order: 1; /* Keep the default flex order for left positioning */
+}
+.main__title {
+  color: #1d2a4d !important;
 }

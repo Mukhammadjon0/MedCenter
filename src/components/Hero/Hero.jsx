@@ -12,7 +12,7 @@ function Hero() {
                             className="d-inline-block text-primary text-uppercase border-bottom border-5"
                             style={{ borderColor: "gray" }}
                         >
-                            {lang === 'uz' ? "Dr.Qodirov ga xush kelibsiz" : lang === 'ru' ? "Добро пожаловать к Др. Кадырову" : 'Welcome to Dr. Kadirov'}
+                            {lang === 'uz' ? "ShifoMed ga xush kelibsiz" : lang === 'ru' ? "Добро пожаловать к Шифомед" : 'Welcome to Shifomed'}
                         </h5>
                         <h1 className="display-1 text-white mb-md-4">
                             {lang === 'uz' ? "Muammolarni kompleks usulida hal qilish" : lang === 'ru' ? "Решение проблем комплексным способом" : 'Solving problems in a complex way'}

@@ -1,3 +1,6 @@
 .service-icons {
   font-size: 2em;
 }
+.service-item {
+  padding: 20px 30px !important;
+}
